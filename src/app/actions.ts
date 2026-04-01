@@ -82,6 +82,41 @@ export async function submitLead(formData: any) {
       )
     `;
 
+    // 5. Post securely to Granot external gateway natively from backend
+    try {
+      const granotBaseUrl = "https://lead.hellomoving.com/LEADSGWHTTP.lidgw?&API_ID=74F36265331A&MOVERREF=Leads@vantagehomemovers.com";
+      
+      // Use URLSearchParams for foolproof URL-encoding of all form values
+      const params = new URLSearchParams();
+      params.append("label", "VMGAW Forms");
+      params.append("servtypeid", "102");
+      params.append("firstname", cleanFirstName);
+      params.append("lastname", cleanLastName);
+      params.append("ozip", pickupZip || "");
+      params.append("dzip", destZip || "");
+      params.append("movesize", moveSize || "");
+      params.append("movedte", formattedMoveDate || "");
+      params.append("phone1", phone || "");
+      params.append("email", email || "");
+      params.append("leadno", leadId);
+
+      const granotUrl = `${granotBaseUrl}&${params.toString()}`;
+
+      const response = await fetch(granotUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+
+      if (!response.ok) {
+        console.error("Granot gateway error status:", response.status);
+      }
+    } catch (gatewayError) {
+      console.error("Granot gateway communication failed:", gatewayError);
+      // We log but do not bubble gateway failures up to the user to keep the frontend UI polished.
+    }
+
     return { success: true, leadId };
   } catch (error: any) {
     console.error("Failed to insert lead:", error);
