@@ -4,7 +4,7 @@ import { Phone, ShieldCheck, Truck } from 'lucide-react';
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-vantage-gray shadow-sm">
-      <div className="container-custom mx-auto h-20 md:h-24 lg:h-32 flex items-center justify-between">
+      <div className="container-custom mx-auto h-20 md:h-24 lg:h-[118px] flex items-center justify-between">
         
         {/* Left: Trusted Badge */}
         <div className="hidden lg:flex items-center gap-2.5 text-vantage-dark font-semibold">
@@ -17,7 +17,7 @@ export default function Header() {
           <img 
             src="/Vantage Logo - Copy.png" 
             alt="Vantage Movers" 
-            className="h-14 md:h-16 lg:h-24 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-14 md:h-16 lg:h-[86px] w-auto object-contain transition-transform group-hover:scale-105"
           />
         </Link>
 

@@ -15,7 +15,7 @@ export default function Hero() {
           
           {/* Left Content */}
           <div className="w-full text-center lg:text-left animate-slide-up flex flex-col justify-center h-full">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-vantage-dark leading-tight tracking-tight mb-6 lg:whitespace-nowrap">
+            <h1 className="text-[clamp(1.5rem,7vw,2.25rem)] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-vantage-dark leading-tight tracking-tight mb-6 whitespace-nowrap sm:whitespace-normal lg:whitespace-nowrap">
               Move Easy. <span className="text-vantage-blue">Live Happy.</span>
             </h1>
             

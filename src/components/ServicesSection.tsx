@@ -77,17 +77,17 @@ export default function ServicesSection() {
         </div>
 
         {/* CTA Area */}
-        <div className="mt-16 w-full max-w-4xl mx-auto bg-vantage-blue py-12 px-6 rounded-3xl relative overflow-hidden text-center text-white shadow-2xl border border-white/10">
+        <div className="mt-16 w-full max-w-2xl mx-auto bg-vantage-blue py-8 px-6 lg:py-10 lg:px-8 rounded-3xl relative overflow-hidden text-center text-white shadow-2xl border border-white/10">
           <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none"></div>
-          <div className="relative z-10 flex flex-col items-center justify-center gap-6">
-            <p className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+          <div className="relative z-10 flex flex-col items-center justify-center gap-5 lg:gap-6">
+            <p className="text-xl md:text-2xl font-bold text-white tracking-tight">
               Call Now for a Free Quote
             </p>
             <a
               href="tel:888-111-2222" 
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-bold text-vantage-dark bg-vantage-yellow hover:bg-yellow-400 rounded-full shadow-[0_4px_20px_rgba(250,204,21,0.4)] hover:shadow-[0_4px_30px_rgba(250,204,21,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base md:text-lg font-bold text-vantage-dark bg-vantage-yellow hover:bg-yellow-400 rounded-full shadow-[0_4px_20px_rgba(250,204,21,0.4)] hover:shadow-[0_4px_30px_rgba(250,204,21,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
             >
-              <Phone className="w-6 h-6" />
+              <Phone className="w-5 h-5" />
               888-111-2222
             </a>
           </div>
