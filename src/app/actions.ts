@@ -48,18 +48,18 @@ export async function submitLead(formData: any) {
     const dateSubmitted = new Date().toISOString(); 
 
     // 4. Secure Insert into the Database
-    // Adapt 'leads' to your actual existing table name if needed!
+    // Adjusted to exactly match the real table schema: 'Leads'
     await sql`
-      INSERT INTO "leads" (
-        "Pick up zip code", 
-        "Destination zip code", 
-        "Name", 
-        "Move size", 
-        "Move date", 
-        "Phone number", 
-        "Email", 
-        "Lead ID", 
-        "Date submitted"
+      INSERT INTO "Leads" (
+        pickup_zip, 
+        delivery_zip, 
+        name, 
+        move_size, 
+        move_date, 
+        phone, 
+        email, 
+        leadid, 
+        date_submitted
       ) VALUES (
         ${pickupZip}, 
         ${destZip}, 
