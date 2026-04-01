@@ -42,6 +42,15 @@ export async function submitLead(formData: any) {
       .filter(Boolean)
       .join(" ");
       
+    // Reformat YYYY-MM-DD to MM/DD/YYYY for the database
+    let formattedMoveDate = moveDate;
+    if (moveDate && moveDate.includes('-')) {
+      const [year, month, day] = moveDate.split("-");
+      if (year && month && day) {
+        formattedMoveDate = `${month}/${day}/${year}`;
+      }
+    }
+      
     const leadId = generateLeadId();
     
     // Server-generated timestamp in a standard Postgres-compatible format (ISO 8601)
@@ -65,7 +74,7 @@ export async function submitLead(formData: any) {
         ${destZip}, 
         ${name}, 
         ${moveSize}, 
-        ${moveDate}, 
+        ${formattedMoveDate}, 
         ${phone}, 
         ${email}, 
         ${leadId}, 
