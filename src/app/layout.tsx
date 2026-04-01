@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vantage Movers LLC | Trusted Nationwide Moving Broker",
+  title: "Affordable Nationwide Moving | Vantage Movers",
   description: "Get a customized moving quote today. Vantage Movers LLC coordinates with FMCSA authorized motor carriers to ensure a smooth transition.",
 };
 

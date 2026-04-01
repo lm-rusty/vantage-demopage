@@ -26,11 +26,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="hover:text-vantage-yellow transition-colors">Home</Link></li>
-              <li><Link href="#" className="hover:text-vantage-yellow transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-vantage-yellow transition-colors">Broker vs Carrier</Link></li>
-              <li><Link href="#" className="hover:text-vantage-yellow transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-vantage-yellow transition-colors">Terms of Service</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-vantage-yellow transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/cancellation-policy" className="hover:text-vantage-yellow transition-colors">Cancellation Policy</Link></li>
+              <li><a href="https://www.fmcsa.dot.gov/sites/fmcsa.dot.gov/files/docs/Rights-and-Responsibilities-2013.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-vantage-yellow transition-colors">Your Rights and Responsibilities</a></li>
+              <li><a href="https://www.fmcsa.dot.gov/sites/fmcsa.dot.gov/files/docs/Ready_To_Move_Brochure_2006.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-vantage-yellow transition-colors">Ready to Move Brochure</a></li>
             </ul>
           </div>
 
