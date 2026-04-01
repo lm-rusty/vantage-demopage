@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { ArrowRight, CheckCircle2, Star } from 'lucide-react';
+import { submitLead } from '../app/actions';
 
 const formSchema = z.object({
   pickupZip: z.string().regex(/^\d{5}$/, "Must be a 5-digit zip code"),
@@ -27,6 +28,8 @@ type FormData = z.infer<typeof formSchema>;
 export default function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const { register, handleSubmit, trigger, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -42,9 +45,21 @@ export default function MultiStepForm() {
     if (isStepValid) setStep((s) => s + 1);
   };
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form Submitted:", data);
-    setIsSubmitted(true);
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    setSubmitError('');
+    try {
+      const result = await submitLead(data);
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        setSubmitError(result.error || 'Failed to submit the form.');
+      }
+    } catch (error) {
+      setSubmitError('An unexpected networking error occurred.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -158,9 +173,17 @@ export default function MultiStepForm() {
               Next Step <ArrowRight className="w-5 h-5" />
             </button>
           ) : (
-            <button type="submit" className="w-full bg-vantage-yellow hover:bg-vantage-dark-yellow text-vantage-dark font-bold py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-lg transform hover:-translate-y-0.5">
-              Get Quote Now <ArrowRight className="w-5 h-5" />
-            </button>
+            <div className="space-y-3">
+              {submitError && <p className="text-red-500 font-semibold text-sm text-center bg-red-50 py-2 rounded-lg">{submitError}</p>}
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className={`w-full bg-vantage-yellow text-vantage-dark font-bold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 text-lg ${isSubmitting ? 'opacity-70 cursor-not-allowed shadow-none' : 'hover:bg-vantage-dark-yellow shadow-md hover:shadow-lg transform hover:-translate-y-0.5'}`}
+              >
+                {isSubmitting ? 'Submitting...' : 'Get Quote Now'} 
+                {!isSubmitting && <ArrowRight className="w-5 h-5" />}
+              </button>
+            </div>
           )}
         </div>
         
