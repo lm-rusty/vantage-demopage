@@ -36,11 +36,9 @@ export async function submitLead(formData: any) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email && !emailRegex.test(email)) throw new Error("Invalid email format");
 
-    // 3. Apply custom merge and formatting rules
-    const name = [firstName, lastName]
-      .map((v: string) => v.trim())
-      .filter(Boolean)
-      .join(" ");
+    // 3. Apply custom formatting rules
+    const cleanFirstName = firstName ? firstName.trim() : '';
+    const cleanLastName = lastName ? lastName.trim() : '';
       
     // Reformat YYYY-MM-DD to MM/DD/YYYY for the database
     let formattedMoveDate = moveDate;
@@ -60,9 +58,10 @@ export async function submitLead(formData: any) {
     // Adjusted to exactly match the real table schema: 'Leads'
     await sql`
       INSERT INTO "Leads" (
+        first_name,
+        last_name,
         pickup_zip, 
         delivery_zip, 
-        name, 
         move_size, 
         move_date, 
         phone, 
@@ -70,9 +69,10 @@ export async function submitLead(formData: any) {
         leadid, 
         date_submitted
       ) VALUES (
+        ${cleanFirstName}, 
+        ${cleanLastName}, 
         ${pickupZip}, 
         ${destZip}, 
-        ${name}, 
         ${moveSize}, 
         ${formattedMoveDate}, 
         ${phone}, 
