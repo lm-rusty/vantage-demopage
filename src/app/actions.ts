@@ -100,13 +100,14 @@ export async function submitLead(formData: any) {
       params.append("email", email || "");
       params.append("leadno", leadId);
 
-      const granotUrl = `${granotBaseUrl}&${params.toString()}`;
+      const queryString = params.toString().replace(/\+/g, '%20');
 
-      const response = await fetch(granotUrl, {
+      const response = await fetch(granotBaseUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
+        body: queryString, // Granot strict enforcement requires the parameters cleanly mapped into the body.
       });
 
       if (!response.ok) {
