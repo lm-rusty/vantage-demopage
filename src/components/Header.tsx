@@ -23,11 +23,11 @@ export default function Header() {
 
         {/* Right: CTA Button */}
         <a 
-          href="tel:888-111-2222" 
+          href="tel:888-486-2499" 
           className="flex items-center gap-2 bg-vantage-yellow hover:bg-vantage-dark-yellow text-vantage-dark font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
         >
           <Phone className="w-4 h-4" />
-          <span className="hidden sm:inline">Call us - 888-111-2222</span>
+          <span className="hidden sm:inline">Call us - (888) 486-2499</span>
           <span className="sm:hidden">Call Now</span>
         </a>
 

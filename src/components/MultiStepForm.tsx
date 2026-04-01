@@ -165,8 +165,8 @@ export default function MultiStepForm() {
         </div>
         
         <div className="mt-6 text-center">
-          <a href="tel:888-111-2222" className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-lg w-full mb-4">
-            Call 888-111-2222 for $500 off!
+          <a href="tel:888-486-2499" className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-lg w-full mb-4">
+            Call (888) 486-2499 for $500 off!
           </a>
         </div>
         

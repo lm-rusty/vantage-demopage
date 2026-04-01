@@ -84,11 +84,11 @@ export default function ServicesSection() {
               Call Now for a Free Quote
             </p>
             <a
-              href="tel:888-111-2222" 
+              href="tel:888-486-2499" 
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base md:text-lg font-bold text-vantage-dark bg-vantage-yellow hover:bg-yellow-400 rounded-full shadow-[0_4px_20px_rgba(250,204,21,0.4)] hover:shadow-[0_4px_30px_rgba(250,204,21,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
             >
               <Phone className="w-5 h-5" />
-              888-111-2222
+              (888) 486-2499
             </a>
           </div>
         </div>

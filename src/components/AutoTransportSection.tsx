@@ -37,11 +37,11 @@ export default function AutoTransportSection() {
               </p>
               <div className="flex justify-center">
                 <a 
-                  href="tel:888-111-2222" 
+                  href="tel:888-486-2499" 
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-bold text-vantage-dark bg-vantage-yellow hover:bg-yellow-400 rounded-full shadow-[0_4px_20px_rgba(250,204,21,0.4)] hover:shadow-[0_4px_30px_rgba(250,204,21,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
                 >
                   <Phone className="w-6 h-6" />
-                  888-111-2222
+                  (888) 486-2499
                 </a>
               </div>
             </div>
