@@ -15,15 +15,15 @@ export default function Hero() {
           
           {/* Left Content */}
           <div className="w-full text-center lg:text-left animate-slide-up flex flex-col justify-center h-full">
-            <h1 className="text-[clamp(1.5rem,7vw,2.25rem)] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-vantage-dark leading-tight tracking-tight mb-6 whitespace-nowrap sm:whitespace-normal lg:whitespace-nowrap">
+            <h1 className="text-[clamp(1.5rem,7vw,2.25rem)] sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-vantage-dark leading-tight tracking-tight mb-4 whitespace-nowrap sm:whitespace-normal lg:whitespace-nowrap">
               Move Easy. <span className="text-vantage-blue">Live Happy.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-md mx-auto lg:mx-0">
+            <p className="text-base md:text-lg text-gray-600 mb-5 max-w-2xl mx-auto lg:mx-0">
               Whether you're moving across state lines or across the country, Vantage Movers connects you with top-rated, FMCSA-authorized carriers for a seamless transition.
             </p>
 
-            <ul className="flex flex-col gap-3 mb-8 text-left max-w-md mx-auto lg:mx-0">
+            <ul className="flex flex-col gap-2.5 mb-6 text-sm md:text-base text-left max-w-2xl mx-auto lg:mx-0">
               <li className="flex items-center gap-3 text-vantage-dark">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
                 <span className="font-medium">5 Star Customer Rated</span>
