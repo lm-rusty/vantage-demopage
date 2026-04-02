@@ -81,9 +81,7 @@ export default function MultiStepForm() {
           <span className="flex text-yellow-500">
             {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
           </span>
-          <span className="text-sm font-semibold text-vantage-dark ml-1">4.8/5</span>
-          <span className="text-sm font-semibold text-gray-400">|</span>
-          <span className="text-sm font-semibold text-vantage-dark">BBB Rating</span>
+          <span className="text-sm font-semibold text-vantage-dark ml-1">BBB Rating</span>
         </div>
       </div>
 

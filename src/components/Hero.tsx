@@ -26,19 +26,23 @@ export default function Hero() {
             <ul className="flex flex-col gap-3 mb-8 text-left max-w-2xl mx-auto lg:mx-0">
               <li className="flex items-center gap-3 text-vantage-dark">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
-                <span className="font-medium">No Hidden Fees</span>
+                <span className="font-medium">5 Star Customer Rated</span>
               </li>
               <li className="flex items-center gap-3 text-vantage-dark">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
-                <span className="font-medium">Nationwide Service</span>
+                <span className="font-medium">FMCSA Licensed & Insured</span>
               </li>
               <li className="flex items-center gap-3 text-vantage-dark">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
-                <span className="font-medium">Veterans and Senior Discounts</span>
+                <span className="font-medium">Nationwide Service in All 50 States</span>
               </li>
               <li className="flex items-center gap-3 text-vantage-dark">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
-                <span className="font-medium">Highest Quality Service for the Best Price</span>
+                <span className="font-medium">Veterans & Senior Discounts Offered!</span>
+              </li>
+              <li className="flex items-center gap-3 text-vantage-dark">
+                <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
+                <span className="font-medium">No Hidden Fees - Binding Estimates Available</span>
               </li>
             </ul>
 
