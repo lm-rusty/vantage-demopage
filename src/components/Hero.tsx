@@ -19,11 +19,11 @@ export default function Hero() {
               Move Easy. <span className="text-vantage-blue">Live Happy.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-md mx-auto lg:mx-0">
               Whether you're moving across state lines or across the country, Vantage Movers connects you with top-rated, FMCSA-authorized carriers for a seamless transition.
             </p>
 
-            <ul className="flex flex-col gap-3 mb-8 text-left max-w-2xl mx-auto lg:mx-0">
+            <ul className="flex flex-col gap-3 mb-8 text-left max-w-md mx-auto lg:mx-0">
               <li className="flex items-center gap-3 text-vantage-dark">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
                 <span className="font-medium">5 Star Customer Rated</span>
@@ -38,7 +38,7 @@ export default function Hero() {
               </li>
               <li className="flex items-center gap-3 text-vantage-dark">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
-                <span className="font-medium">Veterans & Senior Discounts Offered!</span>
+                <span className="font-medium">Veterans & Senior Discounts Offered</span>
               </li>
               <li className="flex items-center gap-3 text-vantage-dark">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
