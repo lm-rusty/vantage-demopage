@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { ArrowRight, CheckCircle2, Star } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { submitLead } from '../app/actions';
 
 const formSchema = z.object({
@@ -26,8 +27,8 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export default function MultiStepForm() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
@@ -51,7 +52,7 @@ export default function MultiStepForm() {
     try {
       const result = await submitLead(data);
       if (result.success) {
-        setIsSubmitted(true);
+        router.push('/thank-you');
       } else {
         setSubmitError(result.error || 'Failed to submit the form.');
       }
@@ -62,15 +63,7 @@ export default function MultiStepForm() {
     }
   };
 
-  if (isSubmitted) {
-    return (
-      <div className="bg-white rounded-2xl shadow-xl p-8 text-center animate-fade-in border-t-4 border-vantage-blue w-full max-w-md mx-auto">
-        <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-vantage-dark mb-2">Quote Requested!</h3>
-        <p className="text-gray-600">One of our moving specialists will contact you shortly to provide your customized estimate.</p>
-      </div>
-    );
-  }
+
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 animate-fade-in w-full max-w-md mx-auto border-t-4 border-vantage-yellow relative">
