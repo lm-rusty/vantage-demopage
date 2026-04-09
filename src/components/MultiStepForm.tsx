@@ -26,7 +26,12 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-export default function MultiStepForm() {
+interface MultiStepFormProps {
+  phoneDisplay?: string;
+  phoneLink?: string;
+}
+
+export default function MultiStepForm({ phoneDisplay = '(888) 486-2499', phoneLink = 'tel:888-486-2499' }: MultiStepFormProps) {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -179,8 +184,8 @@ export default function MultiStepForm() {
         </div>
         
         <div className="mt-6 text-center">
-          <a href="tel:888-486-2499" className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-lg w-full mb-4">
-            Call (888) 486-2499 for $500 off!
+          <a href={phoneLink} className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-lg w-full mb-4">
+            Call {phoneDisplay} for $500 off!
           </a>
         </div>
         

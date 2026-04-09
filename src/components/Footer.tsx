@@ -1,7 +1,12 @@
 import { Truck } from 'lucide-react';
 import Link from 'next/link';
 
-export default function Footer() {
+interface FooterProps {
+  phoneDisplay?: string;
+  phoneLink?: string;
+}
+
+export default function Footer({ phoneDisplay = '(888) 486-2499', phoneLink = 'tel:888-486-2499' }: FooterProps) {
   return (
     <footer className="bg-vantage-dark text-gray-300 pt-16 pb-8 border-t-4 border-vantage-yellow">
       <div className="container-custom mx-auto">
@@ -36,7 +41,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold text-lg mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>Phone: <a href="tel:888-486-2499" className="text-vantage-yellow hover:underline">(888) 486-2499</a></li>
+              <li>Phone: <a href={phoneLink} className="text-vantage-yellow hover:underline">{phoneDisplay}</a></li>
               <li>Email: info@vantagemovers.com</li>
               <li>Hours: Mon-Fri: 8am - 8pm EST<br/>Sat-Sun: 9am - 5pm EST</li>
             </ul>

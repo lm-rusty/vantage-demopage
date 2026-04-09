@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import { Phone, ShieldCheck, Truck } from 'lucide-react';
 
-export default function Header() {
+interface HeaderProps {
+  phoneDisplay?: string;
+  phoneLink?: string;
+}
+
+export default function Header({ phoneDisplay = '(888) 486-2499', phoneLink = 'tel:888-486-2499' }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-vantage-gray shadow-sm">
       <div className="container-custom mx-auto h-20 md:h-24 lg:h-[118px] flex items-center justify-between">
@@ -23,11 +28,11 @@ export default function Header() {
 
         {/* Right: CTA Button */}
         <a 
-          href="tel:888-486-2499" 
+          href={phoneLink} 
           className="flex items-center gap-2 bg-vantage-yellow hover:bg-vantage-dark-yellow text-vantage-dark font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
         >
           <Phone className="w-4 h-4" />
-          <span className="hidden sm:inline">Call us - (888) 486-2499</span>
+          <span className="hidden sm:inline">Call us - {phoneDisplay}</span>
           <span className="sm:hidden">Call Now</span>
         </a>
 

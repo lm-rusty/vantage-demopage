@@ -1,7 +1,12 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 
-export default function AutoTransportSection() {
+interface AutoTransportSectionProps {
+  phoneDisplay?: string;
+  phoneLink?: string;
+}
+
+export default function AutoTransportSection({ phoneDisplay = '(888) 486-2499', phoneLink = 'tel:888-486-2499' }: AutoTransportSectionProps) {
   return (
     <section className="bg-vantage-gray py-8 lg:py-12 relative border-t border-gray-100">
       <div className="container-custom mx-auto">
@@ -37,11 +42,11 @@ export default function AutoTransportSection() {
               </p>
               <div className="flex justify-center">
                 <a 
-                  href="tel:888-486-2499" 
+                  href={phoneLink} 
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-bold text-vantage-dark bg-vantage-yellow hover:bg-yellow-400 rounded-full shadow-[0_4px_20px_rgba(250,204,21,0.4)] hover:shadow-[0_4px_30px_rgba(250,204,21,0.6)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
                 >
                   <Phone className="w-6 h-6" />
-                  (888) 486-2499
+                  {phoneDisplay}
                 </a>
               </div>
             </div>
