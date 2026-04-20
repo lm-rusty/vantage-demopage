@@ -7,6 +7,7 @@ import TrustSection from '@/components/TrustSection';
 import LogoCarousel from '@/components/LogoCarousel';
 import HowItWorks from '@/components/HowItWorks';
 import Footer from '@/components/Footer';
+import PromoPopup from '@/components/PromoPopup';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <TrustSection />
       </main>
       <Footer />
+      <PromoPopup />
     </>
   );
 }

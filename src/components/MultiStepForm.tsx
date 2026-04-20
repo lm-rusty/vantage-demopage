@@ -57,6 +57,7 @@ export default function MultiStepForm({ phoneDisplay = '(888) 486-2499', phoneLi
     try {
       const result = await submitLead(data);
       if (result.success) {
+        sessionStorage.setItem('vantage_form_submitted', 'true');
         router.push('/thank-you');
       } else {
         setSubmitError(result.error || 'Failed to submit the form.');
@@ -90,7 +91,7 @@ export default function MultiStepForm({ phoneDisplay = '(888) 486-2499', phoneLi
         ))}
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={() => sessionStorage.setItem('vantage_form_active', 'true')} className="space-y-6">
         
         {/* Step 1: Location */}
         {step === 1 && (

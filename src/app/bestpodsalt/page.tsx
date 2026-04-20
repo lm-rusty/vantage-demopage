@@ -7,6 +7,7 @@ import TrustSection from '@/components/TrustSection';
 import LogoCarousel from '@/components/LogoCarousel';
 import HowItWorks from '@/components/HowItWorks';
 import Footer from '@/components/Footer';
+import PromoPopup from '@/components/PromoPopup';
 
 export const metadata = {
   title: "Best Container Alternative",
@@ -34,6 +35,7 @@ export default function BestPodSalt() {
         <TrustSection />
       </main>
       <Footer phoneDisplay={phoneDisplay} phoneLink={phoneLink} />
+      <PromoPopup phoneDisplay={phoneDisplay} phoneLink={phoneLink} />
     </>
   );
 }
